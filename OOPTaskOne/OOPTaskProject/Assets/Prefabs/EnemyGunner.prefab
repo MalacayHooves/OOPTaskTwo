@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
-  maxHealth: 0
+  maxHealth: 1000
   Missile: 2
   attackSpeed: 10
   timer: 0

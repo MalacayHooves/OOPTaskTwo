@@ -10,4 +10,9 @@ public class EnemyHealthBarScript : MonoBehaviour
     {
         healthBarImage.fillAmount = Mathf.Clamp(enemy.health / enemy.maxHealth, 0, 1f);
     }
+
+    private void Update()
+    {
+        UpdateEnemyHealthBar();
+    }
 }
