@@ -1372,6 +1372,7 @@ MonoBehaviour:
   _enemyPrefabs:
   - {fileID: 5332685158187436103, guid: 2fadc258676e0eb4ca78e3860ac855c4, type: 3}
   - {fileID: 5332685158187436103, guid: 214aec5c54c838348b85d75c0e3ac9ce, type: 3}
+  healthBar: {fileID: 29733627}
 --- !u!4 &2030852172
 Transform:
   m_ObjectHideFlags: 0
