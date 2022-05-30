@@ -60,8 +60,8 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            EnemyHealthBarScript enemiesHealth = enemy.GetComponent<EnemyHealthBarScript>();
-            enemiesHealth.UpdateEnemyHealthBar();
+            //EnemyHealthBarScript enemiesHealth = enemy.GetComponent<EnemyHealthBarScript>();
+            //enemiesHealth.UpdateEnemyHealthBar();
         }
 
 
