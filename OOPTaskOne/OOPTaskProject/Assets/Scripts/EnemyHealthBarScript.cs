@@ -8,7 +8,7 @@ public class EnemyHealthBarScript : MonoBehaviour
     public EnemyData enemy;
     public void UpdateEnemyHealthBar()
     {
-        healthBarImage.fillAmount = (enemy.health / enemy.maxHealth);
+        healthBarImage.fillAmount = Mathf.Clamp((float)enemy.health / (float)enemy.maxHealth, 0f, 1f);
     }
 
     private void Update()
