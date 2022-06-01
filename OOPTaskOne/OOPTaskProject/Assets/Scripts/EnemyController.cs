@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.tag == "Missile")
         {
             int damage = collision.gameObject.GetComponent<ProjectileData>().damage;
-            _enemyData.health -= damage;
+            _enemyData.SetHealth(_enemyData.Health - damage);
             collision.gameObject.GetComponent<ProjectileData>().remainingTime = 0;
         }
     }

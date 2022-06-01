@@ -11,11 +11,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject _stone, _bullet, _rocket;
     [SerializeField] private List<GameObject> _enemyPrefabs = new List<GameObject>();
-    [SerializeField] private HealthBarScript healthBar;
+    
+    //[SerializeField] private HealthBarScript healthBar;
 
 
     private void Start()
     {
+        _player.GetComponent<PlayerController>().SetHealth(_player.GetComponent<PlayerController>().MaxHealth);
         for (int i = 0; i < 10; i++)
         {
             GameObject enemy = Instantiate(_enemyPrefabs[Random.Range(0, _enemyPrefabs.Count)]);
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour
             enemy.transform.rotation = Random.rotation;
             enemy.transform.eulerAngles = new Vector3(0, enemy.transform.eulerAngles.y, 0);
             EnemyData enemyData = enemy.GetComponent<EnemyData>();
+            enemy.GetComponent<EnemyData>().SetHealth(enemy.GetComponent<EnemyData>().MaxHealth);
             _enemies.Add(enemyData);
         }
     }
@@ -41,22 +44,22 @@ public class GameManager : MonoBehaviour
 
         foreach (EnemyData enemy in _enemies)
         {
-            if (enemy.health <= 0)
+            if (enemy.Health <= 0)
             {
                 Destroy(enemy.gameObject);
             }
-            else if (Vector3.Distance(_player.transform.position, enemy.gameObject.transform.position) <= enemy.attackRadius)
+            else if (Vector3.Distance(_player.transform.position, enemy.gameObject.transform.position) <= enemy.AttackRadius)
             {
                 Aim(enemy.gameObject, _player);
                
-                if (enemy.timer <= 0)
+                if (enemy.Timer <= 0)
                 {
-                    enemy.timer = enemy.attackSpeed;
+                    enemy.SetTimer(enemy.AttackSpeed);
                     Shooting(enemy.FirePoint, enemy.Missile);
                 }
                 else
                 {
-                    enemy.timer -= Time.deltaTime * 10;
+                    enemy.SetTimer(enemy.Timer - Time.deltaTime * 10);
                 }
             }
 
@@ -65,10 +68,9 @@ public class GameManager : MonoBehaviour
         }
 
 
-        _enemies.RemoveAll(enemy => enemy.health <= 0);
+        _enemies.RemoveAll(enemy => enemy.Health <= 0);
 
-        healthBar.UpdateHealthBar();
-        if (_player.GetComponent<PlayerController>().health <= 0)
+        if (_player.GetComponent<PlayerController>().Health <= 0)
         {
             print("You're dead!");
             Application.Quit();
