@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : Unit
+public class PlayerController : UnitData
 {    
     [SerializeField] private float _rotationSpeed = 50;
     [SerializeField] private float _mouseSensitivityHorizontal = 2;
@@ -26,7 +26,7 @@ public class PlayerController : Unit
     public void Movement(Vector3 move)
     {
         move = transform.TransformDirection(move); //this is needed to make character move considering his rotation
-        _controller.Move(move * Time.deltaTime * movementSpeed);
+        _controller.Move(move * Time.deltaTime * _movementSpeed);
     }
 
     public void Rotation(float direction)

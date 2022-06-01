@@ -325,14 +325,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46400f5d7e06f524ba5d2bf59198e672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1500
-  maxHealth: 1500
-  Missile: 1
-  attackSpeed: 15
-  timer: 0
-  attackRadius: 15
-  movementSpeed: 3
-  FirePoint: {fileID: 3966552114342398701}
+  _maxHealth: 100
+  _missile: 0
+  _attackSpeed: 0
+  _timer: 0
+  _attackRadius: 0
+  _movementSpeed: 0
+  _firePoint: {fileID: 3966552114342398701}
   Type: 1
 --- !u!1 &6865206056840817962
 GameObject:
@@ -503,4 +502,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarImage: {fileID: 8715881445126182188}
-  enemy: {fileID: 3252217793799983324}
+  unit: {fileID: 3252217793799983324}

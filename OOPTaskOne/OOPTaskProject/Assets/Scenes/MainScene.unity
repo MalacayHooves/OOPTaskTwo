@@ -207,11 +207,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 29733623}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ba4b6290be01ff43aa3372199e87442, type: 3}
+  m_Script: {fileID: 11500000, guid: a7b85a5d182c02240b1894966a6d2578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarImage: {fileID: 1873263216}
-  player: {fileID: 1355623305}
+  unit: {fileID: 1355623305}
 --- !u!43 &483457555
 Mesh:
   m_ObjectHideFlags: 0
@@ -1172,14 +1172,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30852517a3cb1dc4da837b94f7a8107a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 120
-  maxHealth: 120
-  Missile: 0
-  attackSpeed: 5
-  timer: 0
-  attackRadius: 5
-  movementSpeed: 3
-  FirePoint: {fileID: 848497452}
+  _maxHealth: 100
+  _missile: 0
+  _attackSpeed: 0
+  _timer: 0
+  _attackRadius: 0
+  _movementSpeed: 0
+  _firePoint: {fileID: 848497452}
   _rotationSpeed: 50
   _mouseSensitivityHorizontal: 1
   gameManager: {fileID: 2030852168}
@@ -1392,7 +1391,6 @@ MonoBehaviour:
   _enemyPrefabs:
   - {fileID: 5332685158187436103, guid: d8b93be2d3eee4242a7202f2010729bf, type: 3}
   - {fileID: 5332685158187436103, guid: 214aec5c54c838348b85d75c0e3ac9ce, type: 3}
-  healthBar: {fileID: 29733627}
 --- !u!4 &2030852172
 Transform:
   m_ObjectHideFlags: 0
