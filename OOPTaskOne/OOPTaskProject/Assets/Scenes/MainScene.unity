@@ -1174,10 +1174,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 100
   _missile: 0
-  _attackSpeed: 0
-  _timer: 0
-  _attackRadius: 0
-  _movementSpeed: 0
+  _attackSpeed: 1.67
+  _timer: 0.6
+  _attackRadius: 1.54
+  _movementSpeed: 7
   _firePoint: {fileID: 848497452}
   _rotationSpeed: 50
   _mouseSensitivityHorizontal: 1

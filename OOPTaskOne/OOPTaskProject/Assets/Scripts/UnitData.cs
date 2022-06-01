@@ -9,13 +9,13 @@ using UnityEngine;
 public class UnitData : MonoBehaviour
 {
     
-    [SerializeField][Range((int)50, (int)1000)] protected int _maxHealth = 100;
+    [SerializeField] [Range((int)50, (int)1000)] protected int _maxHealth = 100;
     [SerializeField] protected Missile _missile;
 
-    [SerializeField] protected float _attackSpeed;
+    [SerializeField] [Range(0.5f, 100)] protected float _attackSpeed;
     [SerializeField] protected float _timer;
-    [SerializeField] protected float _attackRadius;
-    [SerializeField] protected float _movementSpeed;
+    [SerializeField] [Range(0.5f, 100)] protected float _attackRadius;
+    [SerializeField] [Range(0.5f, 100)] protected float _movementSpeed;
     [SerializeField] protected GameObject _firePoint;
 
 
