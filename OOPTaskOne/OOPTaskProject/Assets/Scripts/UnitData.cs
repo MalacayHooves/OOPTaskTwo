@@ -18,6 +18,8 @@ public class UnitData : MonoBehaviour
     [SerializeField] [Range(0.5f, 100)] protected float _movementSpeed;
     [SerializeField] protected GameObject _firePoint;
 
+    public event System.Action OnHealthChange;
+
 
     protected int _health;
     public int Health
@@ -33,7 +35,11 @@ public class UnitData : MonoBehaviour
     public float MovementSpeed => _movementSpeed;
     public Missile Missile => _missile;
 
-    public void SetHealth(int health) { if (health >= 0) _health = health; }
+    public void SetHealth(int health)
+    { 
+        if (health >= 0) _health = health;
+        OnHealthChange?.Invoke();
+    }
     public void SetTimer(float timer) => _timer = timer;
 }
 

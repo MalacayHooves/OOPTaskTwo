@@ -6,13 +6,19 @@ public class HealthBar : MonoBehaviour
 {
     public Image healthBarImage;
     public UnitData unit;
-    public void UpdateEnemyHealthBar()
+    public void UpdateHealthBar()
     {
         healthBarImage.fillAmount = Mathf.Clamp((float)unit.Health / (float)unit.MaxHealth, 0f, 1f);
+        print("healthBar's been updated!");
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        UpdateEnemyHealthBar();
+        unit.OnHealthChange += UpdateHealthBar;
+    }
+
+    private void OnDisable()
+    {
+        unit.OnHealthChange -= UpdateHealthBar;
     }
 }
