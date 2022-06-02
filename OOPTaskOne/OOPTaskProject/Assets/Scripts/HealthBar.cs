@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class HealthBar : MonoBehaviour
+public class HealthBar : UnitData
 {
     public Image healthBarImage;
     public UnitData unit;
@@ -14,11 +14,11 @@ public class HealthBar : MonoBehaviour
 
     private void OnEnable()
     {
-        unit.OnHealthChange += UpdateHealthBar;
+        unit.GetComponent<UnitData>().OnHealthChange += UpdateHealthBar;
     }
 
     private void OnDisable()
     {
-        unit.OnHealthChange -= UpdateHealthBar;
+        unit.GetComponent<UnitData>().OnHealthChange -= UpdateHealthBar;
     }
 }

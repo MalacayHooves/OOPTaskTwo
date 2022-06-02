@@ -501,5 +501,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b85a5d182c02240b1894966a6d2578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _missile: 0
+  _attackSpeed: 0
+  _timer: 0
+  _attackRadius: 0
+  _movementSpeed: 0
+  _firePoint: {fileID: 3966552114342398701}
   healthBarImage: {fileID: 8715881445126182188}
   unit: {fileID: 3252217793799983324}
