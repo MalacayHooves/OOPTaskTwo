@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 3019960989889208622}
   - component: {fileID: -8727233987484111833}
   - component: {fileID: 3252217793799983324}
+  - component: {fileID: 5793774471029185286}
   m_Layer: 9
   m_Name: EnemyRocketCarrier
   m_TagString: Untagged
@@ -326,13 +327,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
-  _missile: 0
-  _attackSpeed: 1
+  _missile: 1
+  _attackSpeed: 44
   _timer: 0
-  _attackRadius: 10
   _movementSpeed: 4
   _firePoint: {fileID: 3966552114342398701}
   Type: 1
+  _attackRadius: 10
+--- !u!114 &5793774471029185286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5332685158187436103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05994dbfc6fc74544bf51df9dc6eb465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6865206056840817962
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +518,6 @@ MonoBehaviour:
   _missile: 0
   _attackSpeed: 0
   _timer: 0
-  _attackRadius: 0
   _movementSpeed: 0
   _firePoint: {fileID: 3966552114342398701}
   healthBarImage: {fileID: 8715881445126182188}

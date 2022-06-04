@@ -14,11 +14,11 @@ public class HealthBar : UnitData
 
     private void OnEnable()
     {
-        unit.GetComponent<UnitData>().OnHealthChange += UpdateHealthBar;
+        unit.GetComponent<Healther>().OnHealthChange += UpdateHealthBar;
     }
 
     private void OnDisable()
     {
-        unit.GetComponent<UnitData>().OnHealthChange -= UpdateHealthBar;
+        unit.GetComponent<Healther>().OnHealthChange -= UpdateHealthBar;
     }
 }

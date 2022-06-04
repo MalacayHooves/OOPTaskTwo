@@ -2,15 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Healther : UnitData
+public class Healther : MonoBehaviour
 {
-    //public event System.Action<int> OnHealthChange;
+    private UnitData _unitData;
 
-    /*
-    public void SetHealth(int health)
+    public event System.Action OnHealthChange;
+
+    private void Awake()
     {
-        if (health >= 0) _health = health;
+        _unitData = GetComponent<UnitData>();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        _unitData.SetHealth(_unitData.Health - damage);
         OnHealthChange?.Invoke();
     }
-    */
+
+    public void Kill() => Destroy(gameObject);
 }

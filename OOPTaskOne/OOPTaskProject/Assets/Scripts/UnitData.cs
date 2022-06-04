@@ -14,41 +14,28 @@ public class UnitData : MonoBehaviour
 
     [SerializeField] [Range(0.5f, 100)] protected float _attackSpeed;
     [SerializeField] protected float _timer;
-    [SerializeField] [Range(0.5f, 100)] protected float _attackRadius;
     [SerializeField] [Range(0.5f, 100)] protected float _movementSpeed;
     [SerializeField] protected GameObject _firePoint;
 
     protected Healther healther;
 
-    public event System.Action OnHealthChange;
-
     protected int _health;
     public int Health
     {
         get => _health;
-        private set
-        {
-            _health = value;
-            //healther.OnHealthChange?.Invoke(_health);
-        }
     }
 
     public int MaxHealth => _maxHealth;    
     public float Timer => _timer;
     public GameObject FirePoint => _firePoint;
     public float AttackSpeed => _attackSpeed;
-    public float AttackRadius => _attackRadius;
     public float MovementSpeed => _movementSpeed;
     public Missile Missile => _missile;
 
     
     public void SetTimer(float timer) => _timer = timer;
 
-    public void SetHealth(int health)
-    {
-        if (health >= 0) _health = health;
-        OnHealthChange?.Invoke();
-    }
+    public void SetHealth(int health) => _health = health;
 }
 
 

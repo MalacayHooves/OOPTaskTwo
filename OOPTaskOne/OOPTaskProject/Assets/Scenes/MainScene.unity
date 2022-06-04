@@ -214,7 +214,6 @@ MonoBehaviour:
   _missile: 0
   _attackSpeed: 0
   _timer: 0
-  _attackRadius: 0
   _movementSpeed: 0
   _firePoint: {fileID: 848497452}
   healthBarImage: {fileID: 1873263216}
@@ -1022,6 +1021,8 @@ GameObject:
   - component: {fileID: 1355623305}
   - component: {fileID: 1355623304}
   - component: {fileID: 1355623303}
+  - component: {fileID: 1355623306}
+  - component: {fileID: 1355623307}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -1183,12 +1184,35 @@ MonoBehaviour:
   _missile: 0
   _attackSpeed: 1.67
   _timer: 0.6
-  _attackRadius: 1.54
   _movementSpeed: 7
   _firePoint: {fileID: 848497452}
   _rotationSpeed: 50
   _mouseSensitivityHorizontal: 1
   gameManager: {fileID: 2030852168}
+--- !u!114 &1355623306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355623297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05994dbfc6fc74544bf51df9dc6eb465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1355623307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355623297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00696bf373487744e940cfb73b21aa83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1818222342
 GameObject:
   m_ObjectHideFlags: 0
