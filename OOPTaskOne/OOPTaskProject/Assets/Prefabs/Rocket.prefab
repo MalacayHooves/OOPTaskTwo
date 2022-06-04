@@ -107,8 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84fb84688b75f99439456769b1988e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missileGameObject: {fileID: 0}
   Missile: 1
-  damage: 100
+  damage: 10
   movementSpeed: 10
   remainingTime: 15
