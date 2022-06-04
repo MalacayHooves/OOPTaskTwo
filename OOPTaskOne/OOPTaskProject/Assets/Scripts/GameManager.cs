@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject _player;
 
-    private List<EnemyData> _enemies = new List<EnemyData>();
+    private Dictionary<EnemyData, Healther> _enemies = new Dictionary<EnemyData, Healther>();
     private List<ProjectileData> _missilesData = new List<ProjectileData>();
 
     [SerializeField] private GameObject _stone, _bullet, _rocket;
@@ -26,7 +27,8 @@ public class GameManager : MonoBehaviour
             enemy.transform.eulerAngles = new Vector3(0, enemy.transform.eulerAngles.y, 0);
             EnemyData enemyData = enemy.GetComponent<EnemyData>();
             enemy.GetComponent<EnemyData>().SetHealth(enemy.GetComponent<EnemyData>().MaxHealth);
-            _enemies.Add(enemyData);
+            Healther healther = enemy.GetComponent<Healther>();
+            _enemies.Add(enemyData, healther);
         }
     }
 
@@ -42,12 +44,12 @@ public class GameManager : MonoBehaviour
         }
         _missilesData.RemoveAll(missile => missile.remainingTime <= 0);
 
-        foreach (EnemyData enemy in _enemies)
+
+
+        foreach (EnemyData enemy in _enemies.Keys)
         {
-            if (enemy.Health <= 0)
-            {
-                Destroy(enemy.gameObject);
-            }
+            if (enemy.Health <= 0) _enemies[enemy].Kill();
+
             else if (Vector3.Distance(_player.transform.position, enemy.gameObject.transform.position) <= enemy.AttackRadius)
             {
                 Aim(enemy.gameObject, _player);
@@ -62,13 +64,10 @@ public class GameManager : MonoBehaviour
                     enemy.SetTimer(enemy.Timer - Time.deltaTime * 10);
                 }
             }
-
-            //EnemyHealthBarScript enemiesHealth = enemy.GetComponent<EnemyHealthBarScript>();
-            //enemiesHealth.UpdateEnemyHealthBar();
         }
 
+        _enemies = _enemies.Where(enemy => (enemy.Key.Health > 0)).ToDictionary(d => d.Key, d => d.Value);
 
-        _enemies.RemoveAll(enemy => enemy.Health <= 0);
 
         if (_player.GetComponent<PlayerController>().Health <= 0)
         {
